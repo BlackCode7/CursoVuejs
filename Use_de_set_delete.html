@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Testando Vue js</title>
+    </head>
+    <body>
+        <div id="app" v-show="isOpen">
+            <h1>Testes com vue js!</h1>
+            <button @click.stop.prevent="toggle()">DropDonw</button>
+            
+            <div v-show="isOpen">
+                <ul>
+                    <li>mente_1</li>
+                    <li>mente_2</li>
+                    <li>mente_3</li>
+                    <li>mente_4</li>
+                </ul>
+            </div>
+        
+        </div>
+        
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            export default{
+                //pegando o nome do app
+                name: 'app',
+                //Coletando dados dos usuarios
+                data() {
+                    return {
+                        //Criando uma função
+                        isOpen: false,
+                    }
+                },
+                //Os metodos sao criados aqui dentro
+                methods: {
+                    toggle(){
+                        this.isOpen = !this.isOpen;
+                    },
+                },
+            }
+        </script>
+    </body>
+</html>
